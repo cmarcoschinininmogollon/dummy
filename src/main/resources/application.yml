@@ -1,0 +1,35 @@
+dummy:
+   ruta_logs: C:\Logs\  
+   cron:
+      lectura: 0/2 * * * * ?
+      
+server:
+  port: 9595
+  
+spring:
+  datasource:
+    url: jdbc:h2:~/dbdummy;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    platform: h2
+    username: sa
+    password: 1234
+    driverClassName: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      settings:
+        web-allow-others: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.H2Dialect
+    
+logging:
+  level:
+    org:
+      hibernate:       
+        stat: debug
+  path: C:\Log\ 
+
+        
+    
